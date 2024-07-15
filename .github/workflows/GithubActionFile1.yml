@@ -10,7 +10,7 @@ jobs:
       #   with:
       #     node-version: '20'
       # - run: npm install -g bats
-      - nam: Test run
+      - name: Test run
         run: |
           date
           ls -ls
