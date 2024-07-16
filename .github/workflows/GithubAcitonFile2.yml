@@ -1,21 +1,29 @@
-name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
+name: java-app
+run-name: Java-app workflow
 on:
   push:
     paths:
-      - 'java-demo/**'
+      - 'java-app/**'
       - '.github/workflows/GithubAcitonFile2.yml'
 jobs:
-  action-environment-debug:
+  building-java-app:
     runs-on: ubuntu-latest
-   steps:
-      -users: actions/checkout@v4
-      -name: test run
+    steps:
+      - uses: actions/checkout@v4
+      - name: java-app Test run
         run: | 
           date
           ls -la
           pwd 
           echo "TEST---------------------------------"
           env
-      - run: mvn  -version
+      - name: Set up JDK for x64
+        # https://github.com/actions/setup-java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21.0.2'
+          distribution: 'temurin'
+          architecture: x64
+      - run: mvn -version 
       - run: java -version
+      
