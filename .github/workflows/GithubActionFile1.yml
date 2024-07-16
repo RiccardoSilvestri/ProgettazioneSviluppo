@@ -24,7 +24,7 @@ jobs:
         working-directory: ./web-frontend/
         run: | 
           echo "questo è il mio super_secret ${super_secret}"
-          export SURGE_TOKEN=super_secret
+          export SURGE_TOKEN=$super_secret
           surge ./build/ receptive-mint.surge.sh
       - name: Test run
         run: | 
