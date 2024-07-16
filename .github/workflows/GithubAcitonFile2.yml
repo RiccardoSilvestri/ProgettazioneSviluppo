@@ -5,13 +5,27 @@ on:
     paths:
       - 'java-app/**'
       - '.github/workflows/GithubAcitonFile2.yml'
+    pull_request:
+    types: [opened, synchronize, reopened]
+
 jobs:
   building-java-app:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+          
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+      
       - name: java-app Test run
         run: | 
+        
           date
           ls -la
           pwd 
@@ -27,5 +41,11 @@ jobs:
       - run: mvn -version 
       - run: java -version
       - run: mvn test
+        working-directory: ./java-app/my-app
+      - name: Build and analyze
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=its-silvestri_progettazionesviluppo7
         working-directory: ./java-app/my-app
       
