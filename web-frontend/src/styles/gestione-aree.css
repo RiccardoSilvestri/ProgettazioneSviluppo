@@ -1,0 +1,86 @@
+.lista-aree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    padding: 1.2rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+}
+.lista-aree .delete-button {
+    background-color: #E63946;
+    color: white;
+}
+
+.lista-aree ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.lista-aree ul li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.dettagli-area{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: .6rem;
+}
+.dettagli-area>p{
+    margin-top: 2%;
+    margin-bottom: 0;
+}
+
+.lista-aree input,
+.lista-aree select {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: calc(100% - 20px);
+    font-size: 16px;
+}
+
+.lista-aree button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.sensCont{
+    width: 100%;
+    max-height: 30%;
+    gap: 16px;
+    display: flex;
+    flex: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    margin: 2% 0;
+}
+.singleSens{
+    padding: 8px 16px;
+    background-color: #e3e3e3;
+    border-radius: 5px;
+    transition: .2s ease-in-out;
+}
+.singleSens:hover{
+    box-shadow: 0 2px 2px #e3e3e3;
+}

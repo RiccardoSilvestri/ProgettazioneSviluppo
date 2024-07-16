@@ -1,0 +1,75 @@
+.lista-tariffe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    padding: 1.2rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+}
+
+.lista-tariffe label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.lista-tariffe input,
+.lista-tariffe select {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: calc(100% - 20px);
+    font-size: 16px;
+}
+
+.lista-tariffe button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.lista-tariffe .delete-button {
+    background-color: #E63946;
+    color: white;
+    cursor: pointer;
+}
+
+.lista-tariffe ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.lista-tariffe ul li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    display: flex;
+        flex-direction: column;
+}
+
+.lista-tariffe .prezzo-orario li{
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: auto;
+}
+
+.conferma-tariffa{
+    display: flex;
+    flex-direction: row;
+}

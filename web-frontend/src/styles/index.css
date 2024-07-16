@@ -1,0 +1,85 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+.leaflet-container {
+    position: absolute;
+
+    height: 100%;
+    width: 100%;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+#map-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+main .ContenitoreMappa {
+    min-width: 65%;
+    border: 0;
+}
+
+.map-wrapper {
+    width: 100%;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: none;
+    width: 100%;
+    max-height: 100dvh;
+    overflow: auto;
+}
+
+.layerName{ 
+    font-weight: bold;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    color:white;
+    text-shadow: 
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+.my-div-icon {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+}
+
+.router-link{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 16px;
+    font-weight: bold;
+}
