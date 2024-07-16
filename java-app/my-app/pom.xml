@@ -69,6 +69,35 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
+        <plugin>
+          <!-- https://docs.sonarsource.com/sonarcloud/enriching/test-coverage/java-test-coverage/ -->
+         <groupId>org.jacoco</groupId>
+         <artifactId>jacoco-maven-plugin</artifactId>
+          <version>0.8.12</version>
+          <executions>
+            <execution>
+              <id>prepare-agent</id>
+              <goals>
+                <goal>prepare-agent</goal>
+              </goals>
+            </execution>
+            <execution>
+              <id>report</id>
+              <!-- the following attach JaCoCo to each test phase -->
+              <phase>test</phase>
+              <goals>
+                <goal>report</goal>
+              </goals>
+              <configuration>
+                <formats>
+                  <format>XML</format>
+                  <format>HTML</format>
+                  <format>CSV</format>
+                </formats>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
       </plugins>
   </build>
 </project>
