@@ -26,4 +26,6 @@ jobs:
           architecture: x64
       - run: mvn -version 
       - run: java -version
+      - run: mvn test
+        working-directory: ./java-app/my-app
       
