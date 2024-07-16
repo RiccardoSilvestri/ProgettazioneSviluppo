@@ -1,0 +1,21 @@
+name: learn-github-actions
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
+on:
+  push:
+    paths:
+      - 'java-demo/**'
+jobs:
+  action-environment-debug:
+    runs-on: ubuntu-latest
+   steps:
+   -users: actions/checkout@v4
+   -name: test run
+        run: | 
+          date
+          ls -la
+          pwd 
+          echo "TEST---------------------------------"
+          env
+      - run: mvn  -verison
+      - run: java -version
