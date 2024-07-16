@@ -1,22 +1,21 @@
 name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push]
 on:
   push:
     paths:
       - 'java-demo/**'
-      -'.github/workflows/GithubActionFile2.yml'
+      - '.github/workflows/GithubAcitonFile2.yml'
 jobs:
   action-environment-debug:
     runs-on: ubuntu-latest
    steps:
-   -users: actions/checkout@v4
-   -name: test run
+      -users: actions/checkout@v4
+      -name: test run
         run: | 
           date
           ls -la
           pwd 
           echo "TEST---------------------------------"
           env
-      - run: mvn  -verison
+      - run: mvn  -version
       - run: java -version
