@@ -2,20 +2,24 @@ name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
-  action-enviroment-debug:
+  action-environment-debug:
     runs-on: ubuntu-latest
     steps:
-      # - uses: actions/checkout@v4
-      # - uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+    # - uses: actions/setup-node@v4
       #   with:
       #     node-version: '20'
       - run: npm install --global surge
       - run: surge --version
+      - run: date >> README.md
+      - run: | 
+          export SURGE_TOKEN=5fdd714872b47ea67d92c8775cbe6f05
+          surge . receptive-mint.surge.sh
       - name: Test run
-        run: |
+        run: | 
           date
-          ls -ls
-          pwd
-          echo "CIAO"
+          ls -la
+          pwd 
+          echo "CIAO---------------------------------"
           env
-      - run: echo "FINE"
+      - run: echo "Fineeeeeeeeeeeeeeeeeeeeeeeeeeee"
