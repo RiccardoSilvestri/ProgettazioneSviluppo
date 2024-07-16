@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'java-demo/**'
+      -'.github/workflows/java-app.yml'
 jobs:
   action-environment-debug:
     runs-on: ubuntu-latest
