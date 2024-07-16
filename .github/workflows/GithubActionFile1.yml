@@ -14,11 +14,11 @@ jobs:
       - run: date >> README.md
 
       - run: npm install
-        working-directory: ./web-fronted/
+        working-directory: ./web-frontend/
       - run: npm run build
-        working-directory: ./web-fronted/
+        working-directory: ./web-frontend/
       - name: surge deploy
-        working-directory: ./web-fronted/
+        working-directory: ./web-frontend/
         run: | 
           export SURGE_TOKEN=5fdd714872b47ea67d92c8775cbe6f05
           surge ./build/ receptive-mint.surge.sh
