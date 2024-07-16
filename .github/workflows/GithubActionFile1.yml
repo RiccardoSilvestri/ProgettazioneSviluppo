@@ -17,10 +17,9 @@ jobs:
         working-directory: ./web-fronted/
       - run: npm run build
         working-directory: ./web-fronted/
-      - run: surge deploy
+      - name: surge deploy
         working-directory: ./web-fronted/
-
-      - run: | 
+        run: | 
           export SURGE_TOKEN=5fdd714872b47ea67d92c8775cbe6f05
           surge ./build/ receptive-mint.surge.sh
       - name: Test run
