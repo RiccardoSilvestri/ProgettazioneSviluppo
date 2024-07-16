@@ -5,7 +5,7 @@ on:
     paths:
       - 'java-app/**'
       - '.github/workflows/GithubAcitonFile2.yml'
-    pull_request:
+  pull_request:
     types: [opened, synchronize, reopened]
 
 jobs:
