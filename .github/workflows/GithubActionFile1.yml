@@ -12,9 +12,10 @@ jobs:
       - run: npm install --global surge
       - run: surge --version
       - run: date >> README.md
+      - run: npm run build
       - run: | 
           export SURGE_TOKEN=5fdd714872b47ea67d92c8775cbe6f05
-          surge . receptive-mint.surge.sh
+          surge ./build/ receptive-mint.surge.sh
       - name: Test run
         run: | 
           date
